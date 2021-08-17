@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-10 fw-bold">Capital Gain:</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"> €{{ tax_topay.capital_gain }} </p>
+    
+    {% if cgt_clicked %}
+    <h1 class="display-10 fw-bold">Tax Due:</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead-sm mb-4">With the cgt exemption of €1270</p>
+    </div>
+    <p class="lead mb-4"> €{{ tax_topay.tax_due_cgt }} </p>
+
+    {% else %}
+    <h1 class="display-10 fw-bold">Tax Due:</h1>
+    <p class="lead mb-4"> €{{ tax_topay.tax_due }} </p>
+    {% endif %}
+
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a class="btn btn-outline-secondary btn-lg px-4" href="{% url 'app_home:tax_home' %}">Return to calculator</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
