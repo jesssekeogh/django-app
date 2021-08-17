@@ -16,6 +16,7 @@
     </script>
 <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
 </head>
+
 <div class="container">
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 <a href="{% url 'app_home:tax_home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -30,5 +31,27 @@
 <a href="{% url 'app_home:about' %}" class="nav-link" referrerpolicy="origin">About taxtool.ie</a>
 </li>
 </header>
+<nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'app_home:tax_home' %}">TaxTool.ie</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarsExample03" style="">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">CGT Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About taxtool.ie</a>
+          </li>
+        </ul>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
 {% block content%}
 {% endblock %}
